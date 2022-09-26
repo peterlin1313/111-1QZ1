@@ -12,11 +12,11 @@ namespace _111_1QZ1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            int[] ia_MIndex = new int[10] { 0, 7, 13, 28, 44, 62, 74, 87, 90 };
+            int[] ia_MIndex = new int[10] {0, 7, 13, 28, 44, 62, 74, 75, 87, 90 };
             char[,] ia_Map = new char[10, 10];
-            for (int i_Row=0; i_Row< 10;> i_Row++) {
+            for (int i_Row=0; i_Row< 10; i_Row++) {
                 for (int i_Col = 0; i_Col < 10; i_Col++) {
-                    ia_Map[i_Row, i_Col] = '';
+                    ia_Map[i_Row, i_Col] = 'o';
                 }
             }
 
@@ -33,14 +33,9 @@ namespace _111_1QZ1
             {
                 for (int i_Col = 0; i_Col < 10; i_Col++)
                 {
-                    if (ia_Map[i_Row, i_Col] == ' ') { 
-                        Response.Write("&nsp;")
-                    }
-                    else
-                    {
                         Response.Write(ia_Map[i_Row, i_Col]);
-                    }
                 }
+                Response.Write("<br>");
             }
         }
     }

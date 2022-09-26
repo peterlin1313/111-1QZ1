@@ -1,12 +1,12 @@
 ﻿# 第1次隨堂-隨堂-QZ1
 >
->學號：1234567 
+>學號：109111110
 ><br />
->姓名：王小明 
+>姓名：林育德
 ><br />
->作業撰寫時間：180 (mins，包含程式撰寫時間)
+>作業撰寫時間：30 (mins，包含程式撰寫時間)
 ><br />
->最後撰寫文件日期：2022/10/12
+>最後撰寫文件日期：2022/9/26
 >
 
 本份文件包含以下主題：(至少需下面兩項，若是有多者可以自行新增)
@@ -14,42 +14,41 @@
 - [x]個人認為完成作業須具備觀念
 
 ## 說明程式與內容
+生成一個整數2維陣列變數大小為10* 10
+生成一個整數1維陣列變數大小為10，名稱為ia_MIndex。 在ia_Map，即10*10的二維陣列中，其索引值
+從0至99。今有10個地雷儲存於ia_MIndex，其生成點於索引值0至99中
+輸入 0 7 13 28 44 62 74 75 87 90 輸出為下面陣列
 
-開始寫說明，該說明需說明想法，
-並於之後再對上述想法的每一部分將程式進一步進行展現，
-若需引用程式區則使用下面方法，
-若為.cs檔內程式除了於敘述中需註明檔案名稱外，
-還需使用語法` ```csharp 程式碼 ``` `，
-下段程式碼則為使用後結果：
+namespace _111_1QZ1
+{
+    public partial class Bomb : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            int[] ia_MIndex = new int[10] {0, 7, 13, 28, 44, 62, 74, 75, 87, 90 };
+            char[,] ia_Map = new char[10, 10];
+            for (int i_Row=0; i_Row< 10; i_Row++) {
+                for (int i_Col = 0; i_Col < 10; i_Col++) {
+                    ia_Map[i_Row, i_Col] = 'o';
+                }
+            }
 
-```csharp
-public void mt_getResult(){
-    ...
-}
-```
 
-若要於內文中標示部分.aspx檔，則使用以下標籤` ```html 程式碼 ``` `，
-下段程式碼則為使用後結果：
+            for (int i_Ct = 0; i_Ct <10; i_Ct++)
+            {
+                int i_Row = ia_MIndex[i_Ct] / 10;
+                int i_Col = ia_MIndex[i_Ct] % 10;
+                ia_Map[i_Row, i_Col] = '*';
+            }
 
-```html
-<%@ Page Language="C#" AutoEventWireup="true" ...>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" ...>
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
-        </div>
-    </form>
-</body>
-</html>
-```
-
+            for(int i_Row = 0; i_Row < 10; i_Row++)
+            {
+                for (int i_Col = 0; i_Col < 10; i_Col++)
+                {
+                        Response.Write(ia_Map[i_Row, i_Col]);
+                }
+                Response.Write("<br>");
 
 ## 個人認為完成作業須具備觀念
 
