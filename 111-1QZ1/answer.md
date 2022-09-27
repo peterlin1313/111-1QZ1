@@ -19,12 +19,7 @@
 從0至99。今有10個地雷儲存於ia_MIndex，其生成點於索引值0至99中
 輸入 0 7 13 28 44 62 74 75 87 90 輸出為下面陣列
 
-namespace _111_1QZ1
-{
-    public partial class Bomb : System.Web.UI.Page
-    {
-        protected void Page_Load(object sender, EventArgs e)
-        {
+
             int[] ia_MIndex = new int[10] {0, 7, 13, 28, 44, 62, 74, 75, 87, 90 };
             char[,] ia_Map = new char[10, 10];
             for (int i_Row=0; i_Row< 10; i_Row++) {
@@ -54,4 +49,5 @@ namespace _111_1QZ1
 
 開始寫說明，需要說明本次作業個人覺得需學會那些觀念 (需寫成文章，需最少50字，
 並且文內不得有你、我、他三種文字)
+須懂得使用迴圈與變數的應用。
 
